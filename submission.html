@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Submission - HumOmni</title>
+    <meta
+      name="description"
+      content="HumOmni submission instructions, result file format, and leaderboard update information."
+    />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/css/main.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script defer src="static/site.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top site-navbar">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#humomni-navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">HumOmni</a>
+        </div>
+        <div class="collapse navbar-collapse" id="humomni-navbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="index.html">Calls</a></li>
+            <li><a href="track1.html">Track 1</a></li>
+            <li><a href="track2.html">Track 2</a></li>
+            <li><a href="register.html">Registration</a></li>
+            <li class="active"><a href="submission.html">Submission</a></li>
+            <li class="lang-switch-item">
+              <span class="lang-switch-wrap">
+                <a class="lang-link is-active" href="submission.html">EN</a>
+                <span class="lang-divider">/</span>
+                <a class="lang-link" href="submission.zh.html">中</a>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="site-topbar"></div>
+
+    <main class="container page-content">
+      <aside class="page-toc" id="submission-page-toc" aria-label="On this page">
+        <button class="page-toc-toggle" type="button" aria-controls="submission-page-toc-panel" aria-expanded="true">
+          On this page
+        </button>
+        <div class="page-toc-panel" id="submission-page-toc-panel">
+          <ul class="page-toc-list">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#track1-format">Track 1 Format</a></li>
+            <li><a href="#track2-format">Track 2 Format</a></li>
+            <li><a href="#upload-requirements">Upload Requirements</a></li>
+            <li><a href="#leaderboard-updates">Leaderboard Updates</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <section class="page-header-block" id="overview">
+        <div class="row">
+          <div class="col-xs-12">
+            <h1>Submission</h1>
+            <p class="section-lead">Result Submission</p>
+            <p>
+              Result submission is organized by track and must remain consistent with the registered team information
+              for that track. Before the first submission, complete team registration through the
+              <a href="register.html">Registration</a> page.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <hr />
+
+      <section class="section-block" id="track1-format">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="content-card">
+              <h2>Track 1 Format</h2>
+              <p>Track 1 submissions currently follow the <code>jsonl</code> format shown below.</p>
+              <pre class="submission-code"><code>{"question_id": 0, "answer": "A"}
+{"question_id": 1, "answer": "B"}</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block" id="track2-format">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="content-card">
+              <h2>Track 2 Format</h2>
+              <p>For each sample, the input contains a json file and video frames sampled at 0.5 fps:</p>
+              <pre class="submission-code"><code>files for each question
+1  question.json
+2  0.5.png  // the frame sampled at 0.5 sec
+3  1.0.png
+4  ...
+5  16.5.png // the last frame of the video</code></pre>
+              <pre class="submission-code"><code>question.json
+1  {
+2    "question_id": "IM9NZMRfLd4.1.mp4",
+3    "question": "What kind of items are sold in the store?"
+4  }</code></pre>
+              <p>Your system should resemble the following python pseudocode:</p>
+              <pre class="submission-code"><code>inference pseudocode
+1  input(question)
+2
+3  for current_time in range(0.5, video_length, 0.5):
+4      # READING FRAMES FROM t &gt; current_time IS STRICTLY PROHIBITED NOW
+5      input(f"{current_time}.png")
+6
+7      if respond_now:
+8          output(f"Model response at t={current_time}s")</code></pre>
+              <p>
+                You should submit a jsonl file, one line for each sample. Each line is a json object formatted as
+                follow:
+              </p>
+              <pre class="submission-code"><code>{
+  "question_id": "IM9NZMRfLd4.1.mp4",
+  "model_response_list": [
+    {"time": 1.0, "content": "Model response at t=1.0s"},
+    {"time": 5.5, "content": "Model response at t=5.5s"}
+  ]
+}</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block" id="upload-requirements">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="content-card">
+              <h2>Upload Requirements</h2>
+              <div class="alert alert-info submission-note">
+                Google Drive upload link: to be announced.
+              </div>
+              <ul>
+                <li>For each team, upload the <code>jsonl</code> result file to the designated Google Drive submission folder.</li>
+                <li>The file name must use the <code>Team ID</code>, exactly the same as the registration.</li>
+                <li>Case-sensitive consistency is required.</li>
+                <li>Any violation will result in an error when dealing with the submission file and the submission will be considered invalid.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block" id="leaderboard-updates">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="content-card">
+              <h2>Leaderboard Updates</h2>
+              <ul>
+                <li>Each Monday and Friday, organizers will download the <span class="inline-highlight">latest</span> submissions.</li>
+                <li>Organizers will then run evaluation and update the leaderboard.</li>
+              </ul>
+              <p class="status-note">Track leaderboards:</p>
+              <ul class="submission-link-list">
+                <li><a href="track1.html#leaderboard">Track 1 Leaderboard</a></li>
+                <li><a href="track2.html#leaderboard">Track 2 Leaderboard</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <hr />
+        <p class="text-center">HumOmni: The 1st Workshop on Human-Centric Omni-Model Evaluation.</p>
+      </footer>
+    </main>
+  </body>
+</html>

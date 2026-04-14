@@ -1,0 +1,83 @@
+    HC-OmniWorkshopTrack2Info
+      Track2-ProactivEval:EvaluationofVision-GroundedProactiveInteraction
+    •
+    TrackIntro
+    ThistrackaimstoadvanceAIcapabilitiesforproactiveperceptioninvisualstreamsby
+    evaluatingwhethermodelscanserveasproactiveandhelpfulembodiedassistants.Weassess
+    theircapacitytointerpretcontext,anticipateneeds,andsupporthumansproactively,timely
+    andhelpfullyinseveralreal-world,vision-groundedscenarios.
+    TaskDescription
+    Givenareal-timeplayingvideostreamandaquestionprovidedatthebeginningofthevideo,
+    participantsarerequiredtodevelopmodelsthatcanproactivelydecidewhentorespondand
+    whattorespondtoduringvideoplayback,ratherthanreplyingafterexplicituserqueries.
+    Participantswillbeinvitedtosubmitadialoguesystem,includingamultimodalLLMandthe
+    correspondinginferencecode.Theinputofthesystemwillbeaquestionatthebeginningofthe
+    video,andframe-by-frameinputofavideo.Thesystemshouldbeabletodeterminewhether
+    togeneratearesponseandwhattheresponseshouldbeaftereachframeinput,based
+    solelyonthecontextobservedsofar.Whengeneratingresponsesattimet,usingframes
+    aftertimetisstrictlyprohibited.
+    Thegroundtruthforeachtestexamplecontainsoneormoreresponses.Eachgroundtruth
+    responseconsistsofatimespanandacorrespondingtext.
+    Examplevideo:(thequestionandanswersareillustatedinthevideosassubtitles.Thesubtitle
+    beingswith"[0s]user:"isthequestion,andsubtitlesbeginwith"[t1-t2]assistant:"areground
+    truthanswers.)
+    Evaluationmetrics
+    Modelswillbeevaluatedontimeliness,correctness,andredundancy.
+    ThemodelwillbeevaluatedusingtwoLLM-basedmetrics:PAUC(in[0,1],higherisbetter)
+    andduplicate(in[0,1],lowerisbetter).PAUCrequiresthemodeltogeneratecontentasearly
+    aspossiblewithinthetimespanthatisassemanticallysimilaraspossibletothereferencetext.
+    Thismetricmeasuresbothtimelinessandcorrectnessofamodel.Foradetailedexplanationof
+    thePAUCmetric,pleaserefertotheProactiveVideoQAarXivpaper.
+    Theduplicatemetricrequiresthatthemodeldoesnotgenerateidenticalresponsestoexisting
+    oneswithinthesametimespan.Thismetricmeasurestheredundancyofamodel.Itisdefined
+    asfollows:foreachtimespan,startingfromthesecondresponse,wedeterminewhethereach
+    subsequentresponseisfullyentailedbyallpriorresponseswithinthesametimespan.Theratio
+    ofthenumberofsuchtrueentailmentcasestothetotalnumberofresponsesafterthefirstone
+    inthetimespanistakenastheduplicatescore.Alowervalueindicatesbetterperformance.
+    Forbothmetricsabove,textsimilaritywillbecomputedusinganLLM(初定Gemini-3-Flash).
+    Therankingwillbebasedonaweightedsumofthetwometrics:
+    0.9 ×PAUC+0.1×(1−duplicate)
+                               
+    Schedule
+    可以和你的track1保持⼀致反正有啥要做的事情叫我就⾏
+    LeaderboardandBaseline
+    我理解这个应该就是⼀个像下图这样的表格？
+     Model              PAUC/repetition
+     MMDuet2            TODO
+     （baselinemodel）
+    Input&Outputformat输⼊、输出格式
+    Foreachsample,theinputcontainsajsonfileandvideoframessampledat0.5fps:
+       filesforeachquestion
+       1  question.json
+       2  0.5.png  // the frame sampled at 0.5 sec
+       3  1.0.png
+       4  ...
+       5  16.5.png // the last frame of the video
+       question.json
+       1  {
+       2    "question_id": "IM9NZMRfLd4.1.mp4",
+       3    "question": "What kind of items are sold in the store?"
+       4  }
+   Yoursystemshouldresemblethefollowingpythonpseudocode:
+     inferencepseudocode
+     1  input(question)
+     2
+     3  for current_time in range(0.5, video_length, 0.5):
+     4      # READING FRAMES FROM t > current_time IS STRICTLY PROHIBITED NOW
+     5      input(f"{current_time}.png")
+     6
+     7      if respond_now:
+     8          output(f"Model response at t={current_time}s")
+     9
+   Youshouldsubmitajsonlfile,onelineforeachsample.Eachlineisajsonobjectformattedas
+   follow:
+     Codeblock
+     1  // This formatted json is just for readability;
+     2  // it should be in a single line in your submission.
+     3  {
+     4    "question_id": "IM9NZMRfLd4.1.mp4",
+     5    "model_response_list": [
+     6      {"time": 1.0, "content": "Model response at t=1.0s"},
+     7      {"time": 5.5, "content": "Model response at t=5.5s"},
+     8    ]
+     9  }

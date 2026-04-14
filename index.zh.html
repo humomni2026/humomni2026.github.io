@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>HumOmni：第一届以人为中心的全模态模型评测</title>
+    <meta
+      name="description"
+      content="HumOmni-2026 设置两条评测赛道，聚焦全模态模型在共情语音理解和生成与流式视频场景主动辅助中的能力评估。"
+    />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/css/main.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script defer src="static/site.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top site-navbar">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#humomni-navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.zh.html">HumOmni</a>
+        </div>
+        <div class="collapse navbar-collapse" id="humomni-navbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="index.zh.html">征集</a></li>
+            <li><a href="track1.zh.html">赛道 1</a></li>
+            <li><a href="track2.zh.html">赛道 2</a></li>
+            <li><a href="register.zh.html">报名</a></li>
+            <li><a href="submission.zh.html">提交</a></li>
+            <li class="lang-switch-item">
+              <span class="lang-switch-wrap">
+                <a class="lang-link" href="index.html">EN</a>
+                <span class="lang-divider">/</span>
+                <a class="lang-link is-active" href="index.zh.html">中</a>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="site-topbar"></div>
+
+    <main class="container page-content" id="top">
+      <aside class="page-toc" id="calls-page-toc" aria-label="本页导航">
+        <button class="page-toc-toggle" type="button" aria-controls="calls-page-toc-panel" aria-expanded="true">
+          本页导航
+        </button>
+        <div class="page-toc-panel" id="calls-page-toc-panel">
+          <ul class="page-toc-list">
+            <li><a href="#intro">征集概览</a></li>
+            <li><a href="#tracks">评测赛道</a></li>
+            <li><a href="#awards">奖项设置</a></li>
+            <li><a href="#important-dates">重要日期</a></li>
+            <li><a href="#general-rules">通用规则</a></li>
+            <li><a href="#organizers">组织者</a></li>
+            <li><a href="#advisors">顾问</a></li>
+            <li><a href="#contact">联系我们</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <section class="hero-block">
+        <div class="row">
+          <div class="col-xs-12 text-center">
+            <h1><span class="hero-line hero-line-primary hero-line-nowrap hero-line-zh-primary">HumOmni：第一届以人为中心的全模态模型评测</span></h1>
+            <h2>
+              <span class="hero-line hero-line-secondary hero-line-nowrap hero-line-zh-secondary">面向语境化情感语音生成与主动式多模态交互的评测基准</span>
+            </h2>
+          </div>
+        </div>
+      </section>
+
+      <hr />
+
+      <section class="section-block" id="intro">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2>征集概览</h2>
+            <p>
+              HumOmni-2026 设置两条评测赛道，聚焦全模态模型在共情语音理解和生成（EmpathyEval）与流式视频场景主动辅助（ProactivEval）的能力评估，强调以人为中心的评测与贴近真实场景的多模态交互。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block" id="tracks">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2>评测赛道</h2>
+            <div class="panel panel-default track-panel">
+              <div class="panel-heading">
+                <h3 class="panel-title">赛道 1：EmpathyEval</h3>
+              </div>
+              <div class="panel-body">
+                <p>
+                  评测多模态系统如何理解人的语境和副语言信息，并给出合适的情感语音回应。
+                </p>
+                <ul>
+                  <li>基准包含 Context-Variant 与 Tone-Variant 两种设置。</li>
+                  <li>输入包括文本语境、一段话语音频以及候选回复音频。</li>
+                  <li>评价指标为准确率。</li>
+                </ul>
+                <p><a class="detail-link" href="track1.zh.html">查看赛道 1 详情</a></p>
+              </div>
+            </div>
+
+            <div class="panel panel-default track-panel">
+              <div class="panel-heading">
+                <h3 class="panel-title">赛道 2：ProactivEval</h3>
+              </div>
+              <div class="panel-body">
+                <p>
+                  评测主动式多模态系统在流式视频理解过程中何时回应、回应什么的能力。
+                </p>
+                <ul>
+                  <li>输入包括视频及用户指令。</li>
+                  <li>评价指标为 PAUC 和 Duplicate，关注时机、正确性与回复冗余度。</li>
+                </ul>
+                <p><a class="detail-link" href="track2.zh.html">查看赛道 2 详情</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block" id="awards">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2>奖项设置</h2>
+            <ul>
+              <li>
+                表现最优且具有创新性的参赛队伍将受邀展示并获得奖励。
+              </li>
+              <li>每条赛道的冠军队伍将获得 <strong>1000 美元</strong>奖金。</li>
+              <li>第 2 名和第 3 名队伍将分别获得 <strong>800 美元</strong>和 <strong>600 美元</strong>奖金。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block" id="important-dates">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2>重要日期</h2>
+            <p>
+              两条赛道目前共享同一时间线，里程碑状态会显示为已结束、进行中或即将开始。
+            </p>
+            <div class="table-responsive">
+              <table class="table table-bordered table-hover dates-table">
+                <thead>
+                  <tr>
+                    <th>时间</th>
+                    <th>阶段</th>
+                    <th>说明</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr data-start="2026-04-01" data-end="2026-06-30">
+                    <td>2026 年 4 月至 6 月</td>
+                    <td>报名</td>
+                    <td>统一报名开放时间</td>
+                  </tr>
+                  <tr data-start="2026-04-01" data-end="2026-04-30">
+                    <td>2026 年 4 月</td>
+                    <td>阶段 0</td>
+                    <td>训练集与验证集发布</td>
+                  </tr>
+                  <tr data-start="2026-05-15" data-end="2026-05-15">
+                    <td>2026 年 5 月 15 日</td>
+                    <td>阶段 1</td>
+                    <td>测试集发布</td>
+                  </tr>
+                  <tr data-start="2026-06-01" data-end="2026-06-30">
+                    <td>2026 年 6 月 1 日至 6 月 30 日</td>
+                    <td>排行榜</td>
+                    <td>公开评测阶段</td>
+                  </tr>
+                  <tr data-start="2026-07-01" data-end="2026-07-10">
+                    <td>2026 年 7 月 1 日至 7 月 10 日</td>
+                    <td>阶段 2</td>
+                    <td>最终模型提交</td>
+                  </tr>
+                  <tr data-start="2026-07-10" data-end="2026-07-30">
+                    <td>2026 年 7 月 10 日至 7 月 30 日</td>
+                    <td>内部测试</td>
+                    <td>组织方侧评测</td>
+                  </tr>
+                  <tr data-start="2026-08-01" data-end="2026-08-01">
+                    <td>2026 年 8 月 1 日</td>
+                    <td>最终结果</td>
+                    <td>排名发布</td>
+                  </tr>
+                  <tr data-start="2026-08-01" data-end="2026-08-31">
+                    <td>2026 年 8 月</td>
+                    <td>颁奖环节</td>
+                    <td>现场公布</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block" id="general-rules">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2>通用规则</h2>
+            <ul>
+              <li>为保证公平性，前 10 名队伍需提交技术报告以供可复现性核验。</li>
+              <li>每份参赛结果都必须关联到一个队伍及其所属机构，同一队伍的所有成员需统一报名。</li>
+              <li>严禁通过使用多个账号来增加提交次数。</li>
+              <li>提交结果必须遵循规定的格式与提交流程，否则将被视为无效提交。</li>
+              <li>每支队伍的最佳结果将始终公开显示在排行榜上。</li>
+              <li>对于不完整、难以辨认、逾期或违反规则的参赛结果，组织方保留取消资格的绝对权利。</li>
+              <li>中英文规则不一致时以英文内容为准。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block" id="organizers">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2>组织者</h2>
+            <div class="people-grid people-grid-organizers">
+              <div class="person-card">
+                <img class="person-photo" src="static/img/people/organizers/Emmanuele%20Chersoni.jpeg" alt="Emmanuele Chersoni" />
+                <p class="person-name"><a href="https://research.polyu.edu.hk/en/persons/emmanuele-chersoni/" target="_blank" rel="noopener noreferrer">Emmanuele Chersoni</a></p>
+                <p class="person-affiliation">PolyU</p>
+              </div>
+              <div class="person-card">
+                <img class="person-photo" src="static/img/people/organizers/GengWang.jpg" alt="Geng Wang" />
+                <p class="person-name">Geng Wang</p>
+                <p class="person-affiliation">Huawei</p>
+              </div>
+              <div class="person-card">
+                <img class="person-photo" src="static/img/people/organizers/HongLanqing.jpg" alt="Hong Lanqing" />
+                <p class="person-name"><a href="https://racheltechie.github.io/" target="_blank" rel="noopener noreferrer">Hong Lanqing</a></p>
+                <p class="person-affiliation">Huawei</p>
+              </div>
+              <div class="person-card">
+                <img class="person-photo" src="static/img/people/organizers/LiJing.jpg" alt="Li Jing" />
+                <p class="person-name"><a href="https://www4.comp.polyu.edu.hk/~jing1li/" target="_blank" rel="noopener noreferrer">Li Jing</a></p>
+                <p class="person-affiliation">PolyU</p>
+              </div>
+              <div class="person-card">
+                <img class="person-photo" src="static/img/people/organizers/LiPiji.png" alt="Li Piji" />
+                <p class="person-name"><a href="https://lipiji.com/" target="_blank" rel="noopener noreferrer">Li Piji</a></p>
+                <p class="person-affiliation">NUAA</p>
+              </div>
+              <div class="person-card">
+                <img class="person-photo" src="static/img/people/organizers/LinChenghua.png" alt="Lin Chenghua" />
+                <p class="person-name"><a href="https://chenghua-lin.github.io/" target="_blank" rel="noopener noreferrer">Lin Chenghua</a></p>
+                <p class="person-affiliation">UOM</p>
+              </div>
+              <div class="person-card">
+                <img class="person-photo" src="static/img/people/organizers/LuoXuan.png" alt="Luo Xuan" />
+                <p class="person-name">Luo Xuan</p>
+                <p class="person-affiliation">PolyU</p>
+              </div>
+              <div class="person-card">
+                <img class="person-photo" src="static/img/people/organizers/QiXiaojuan.jpg" alt="Qi Xiaojuan" />
+                <p class="person-name"><a href="https://xjqi.github.io/" target="_blank" rel="noopener noreferrer">Qi Xiaojuan</a></p>
+                <p class="person-affiliation">HKU</p>
+              </div>
+              <div class="person-card">
+                <img class="person-photo" src="static/img/people/organizers/WangYueqian.jpg" alt="Wang Yueqian" />
+                <p class="person-name"><a href="https://yellow-binary-tree.github.io/" target="_blank" rel="noopener noreferrer">Wang Yueqian</a></p>
+                <p class="person-affiliation">PKU</p>
+              </div>
+              <div class="person-card">
+                <img class="person-photo" src="static/img/people/organizers/WeiZhongyu.jpg" alt="Wei Zhongyu" />
+                <p class="person-name"><a href="http://www.fudan-disc.com/people/zywei" target="_blank" rel="noopener noreferrer">Wei Zhongyu</a></p>
+                <p class="person-affiliation">FDU</p>
+              </div>
+              <div class="person-card">
+                <img class="person-photo" src="static/img/people/organizers/WuJibin.png" alt="Wu Jibin" />
+                <p class="person-name"><a href="https://www.jibinwu.com/" target="_blank" rel="noopener noreferrer">Wu Jibin</a></p>
+                <p class="person-affiliation">PolyU</p>
+              </div>
+              <div class="person-card">
+                <img class="person-photo" src="static/img/people/organizers/ZhangHuishuai.jpg" alt="Zhang Huishuai" />
+                <p class="person-name"><a href="https://huishuai-git.github.io/" target="_blank" rel="noopener noreferrer">Zhang Huishuai</a></p>
+                <p class="person-affiliation">PKU</p>
+              </div>
+              <div class="person-card">
+                <img class="person-photo" src="static/img/people/organizers/ZhaoLibo.png" alt="Zhao Libo" />
+                <p class="person-name">Zhao Libo</p>
+                <p class="person-affiliation">PolyU</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block" id="advisors">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2>顾问</h2>
+            <div class="people-grid people-grid-advisors">
+              <div class="person-card">
+                <img class="person-photo" src="static/img/people/advisors/HeYulan.jpeg" alt="He Yulan" />
+                <p class="person-name"><a href="https://www.kcl.ac.uk/people/yulan-he" target="_blank" rel="noopener noreferrer">He Yulan</a></p>
+                <p class="person-affiliation">KCL</p>
+              </div>
+              <div class="person-card">
+                <img class="person-photo" src="static/img/people/advisors/LiuQun.jpg" alt="Liu Qun" />
+                <p class="person-name"><a href="https://liuquncn.github.io/index_en.html" target="_blank" rel="noopener noreferrer">Liu Qun</a></p>
+                <p class="person-affiliation">Huawei</p>
+              </div>
+              <div class="person-card">
+                <img class="person-photo" src="static/img/people/advisors/WongKam-Fai.jpg" alt="Wong Kam-Fai" />
+                <p class="person-name"><a href="https://kfwong.cintec.cuhk.edu.hk/" target="_blank" rel="noopener noreferrer">Wong Kam-Fai</a></p>
+                <p class="person-affiliation">CUHK</p>
+              </div>
+              <div class="person-card">
+                <img class="person-photo" src="static/img/people/advisors/XuRuifeng.png" alt="Xu Ruifeng" />
+                <p class="person-name"><a href="https://homepage.hit.edu.cn/xuruifeng" target="_blank" rel="noopener noreferrer">Xu Ruifeng</a></p>
+                <p class="person-affiliation">HITsz</p>
+              </div>
+              <div class="person-card">
+                <img class="person-photo" src="static/img/people/advisors/ZhaoDongyan.jpg" alt="Zhao Dongyan" />
+                <p class="person-name"><a href="https://www.wict.pku.edu.cn/zhaodongyan/en/" target="_blank" rel="noopener noreferrer">Zhao Dongyan</a></p>
+                <p class="person-affiliation">PKU</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block" id="contact">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2>联系我们</h2>
+            <p>
+              如有与比赛相关问题，请电邮
+              <a href="mailto:humomni2026@googlegroups.com">humomni2026@googlegroups.com</a>。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <hr />
+        <p class="text-center">HumOmni：第一届以人为中心的全模态模型评测活动</p>
+      </footer>
+    </main>
+  </body>
+</html>

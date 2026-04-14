@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>赛道 1 - HumOmni</title>
+    <meta
+      name="description"
+      content="HumOmni 赛道 1 聚焦语境化情感语音评测，通过候选语音回复选择来衡量模型能力。"
+    />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/css/main.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script defer src="static/site.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top site-navbar">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#humomni-navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.zh.html">HumOmni</a>
+        </div>
+        <div class="collapse navbar-collapse" id="humomni-navbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="index.zh.html">征集</a></li>
+            <li class="active"><a href="track1.zh.html">赛道 1</a></li>
+            <li><a href="track2.zh.html">赛道 2</a></li>
+            <li><a href="register.zh.html">报名</a></li>
+            <li><a href="submission.zh.html">提交</a></li>
+            <li class="lang-switch-item">
+              <span class="lang-switch-wrap">
+                <a class="lang-link" href="track1.html">EN</a>
+                <span class="lang-divider">/</span>
+                <a class="lang-link is-active" href="track1.zh.html">中</a>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="site-topbar"></div>
+
+    <main class="container page-content">
+      <aside class="page-toc" id="track1-page-toc" aria-label="本页导航">
+        <button class="page-toc-toggle" type="button" aria-controls="track1-page-toc-panel" aria-expanded="true">
+          本页导航
+        </button>
+        <div class="page-toc-panel" id="track1-page-toc-panel">
+          <ul class="page-toc-list">
+            <li><a href="#overview">概览</a></li>
+            <li><a href="#task-description">任务描述</a></li>
+            <li><a href="#context-variant">任务 1</a></li>
+            <li><a href="#tone-variant">任务 2</a></li>
+            <li><a href="#evaluation-metrics">评测指标</a></li>
+            <li><a href="#leaderboard">排行榜</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <section class="page-header-block" id="overview">
+        <div class="row">
+          <div class="col-xs-12">
+            <h1>赛道 1 - EmpathyEval</h1>
+            <p class="section-lead">语境化情感语音评测</p>
+            <p>
+              本赛道评测全模态模型是否能够结合语境理解、情感推断与副语言线索，从候选语音回复中识别最合适的回答，
+              以推动模型在语音场景中的共情感知能力。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <hr />
+
+      <section class="section-block" id="task-description">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="content-card">
+              <h2>任务描述</h2>
+              <p>
+                给定文本语境、一段话语音频以及一组选项式候选回复音频，系统需要选出最具共情性的回复。
+              </p>
+              <p>
+                评测将参赛系统的预测结果与人工标注进行对比，因此该基准强调与人类判断一致的回复选择。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block" id="subtasks">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="content-card subtasks-card">
+              <h2>子任务</h2>
+
+              <div class="subtask-block" id="context-variant">
+                <h3 class="subtask-title">任务 1：Context-Variant</h3>
+                <p>
+                  周围对话语境发生变化，代表不同的情境。模型需要判断哪条候选回复最适合特定的情境。
+                </p>
+                <figure class="figure-card illustration-figure">
+                  <img
+                    src="static/img/track1/track1-context-variant-illustration.png"
+                    alt="Context-Variant 任务示意图。"
+                  />
+                </figure>
+                <p class="example-caption">数据示例（音频与文本语境）</p>
+                <div class="table-responsive">
+                  <table class="table table-bordered track-example-table">
+                    <tbody>
+                      <tr>
+                        <td class="example-text-cell" width="50%">
+                          <div class="example-cell-title">语境 1</div>
+                          <p class="example-text-body">
+                            在一次单身派对周末中，朋友们给 Ta 准备了一份包含美甲服务的水疗惊喜，而 Ta 以前从未去过美甲店。
+                          </p>
+                        </td>
+                        <td class="example-text-cell" width="50%">
+                          <div class="example-cell-title">语境 2</div>
+                          <p class="example-text-body">
+                            在幻想橄榄球赌约失败后，约定的惩罚是去做一套亮闪闪的夸张美甲，并保持一周。
+                          </p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="2" class="example-audio-block">
+                          <div class="example-cell-title">话语音频</div>
+                          <div class="audio-choice-item audio-choice-item-single">
+                            <audio class="audio-player" controls preload="none">
+                              <source src="static/media/track1/context-variant/4.wav" type="audio/wav" />
+                              Your browser does not support the audio element.
+                            </audio>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="example-option-cell">
+                          <div class="example-cell-title">候选回复</div>
+                          <div class="audio-choice-list">
+                            <div class="audio-choice-item">
+                              <span class="audio-choice-label">A</span>
+                              <audio class="audio-player" controls preload="none">
+                                <source src="static/media/track1/context-variant/4_1_badPara.wav" type="audio/wav" />
+                                Your browser does not support the audio element.
+                              </audio>
+                              <span class="audio-choice-badge audio-choice-badge-placeholder" aria-hidden="true"></span>
+                            </div>
+                            <div class="audio-choice-item">
+                              <span class="audio-choice-label">B</span>
+                              <audio class="audio-player" controls preload="none">
+                                <source src="static/media/track1/context-variant/4_1_goodPara.wav" type="audio/wav" />
+                                Your browser does not support the audio element.
+                              </audio>
+                              <span class="audio-choice-badge" aria-label="正确答案">&#10003;</span>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="example-option-cell">
+                          <div class="example-cell-title">候选回复</div>
+                          <div class="audio-choice-list">
+                            <div class="audio-choice-item">
+                              <span class="audio-choice-label">A</span>
+                              <audio class="audio-player" controls preload="none">
+                                <source src="static/media/track1/context-variant/4_2_badPara.wav" type="audio/wav" />
+                                Your browser does not support the audio element.
+                              </audio>
+                              <span class="audio-choice-badge audio-choice-badge-placeholder" aria-hidden="true"></span>
+                            </div>
+                            <div class="audio-choice-item">
+                              <span class="audio-choice-label">B</span>
+                              <audio class="audio-player" controls preload="none">
+                                <source src="static/media/track1/context-variant/4_2_goodPara.wav" type="audio/wav" />
+                                Your browser does not support the audio element.
+                              </audio>
+                              <span class="audio-choice-badge" aria-label="正确答案">&#10003;</span>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="subtask-block" id="tone-variant">
+                <h3 class="subtask-title">任务 2：Tone-Variant</h3>
+                <p>
+                  模型需要依赖话语中的声学和副语言线索来推断说话者的内在状态或情绪，并判断哪条回复在情感上最适合当前话语。
+                </p>
+                <figure class="figure-card illustration-figure">
+                  <img
+                    src="static/img/track1/track1-tone-variant-illustration.png"
+                    alt="Tone-Variant 任务示意图。"
+                  />
+                </figure>
+                <p class="example-caption">数据示例（音频与文本语境）</p>
+                <div class="table-responsive">
+                  <table class="table table-bordered track-example-table">
+                    <tbody>
+                      <tr>
+                        <td colspan="2" class="example-text-cell">
+                          <div class="example-cell-title">语境</div>
+                          <p class="example-text-body">
+                            在妈妈膝盖手术前帮她整理客房时，我翻出一个落满灰尘、写着 “1996-2002” 的盒子，里面装满了夏令营拍立得和生日派对照片。几天后的一个晚上，我把这叠照片带回家继续整理。
+                          </p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="example-audio-block" width="50%">
+                          <div class="example-cell-title">话语音频：语气 1</div>
+                          <div class="audio-choice-item">
+                            <audio class="audio-player" controls preload="none">
+                              <source src="static/media/track1/tone-variant/hit:10062_conv:20125_happy.wav" type="audio/wav" />
+                              Your browser does not support the audio element.
+                            </audio>
+                          </div>
+                        </td>
+                        <td class="example-audio-block" width="50%">
+                          <div class="example-cell-title">话语音频：语气 2</div>
+                          <div class="audio-choice-item">
+                            <audio class="audio-player" controls preload="none">
+                              <source src="static/media/track1/tone-variant/hit:10062_conv:20125_sad.wav" type="audio/wav" />
+                              Your browser does not support the audio element.
+                            </audio>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="example-option-cell">
+                          <div class="example-cell-title">候选回复</div>
+                          <div class="audio-choice-list">
+                            <div class="audio-choice-item">
+                              <span class="audio-choice-label">A</span>
+                              <audio class="audio-player" controls preload="none">
+                                <source
+                                  src="static/media/track1/tone-variant/hit:10062_conv:20125_happy_goodPara.wav"
+                                  type="audio/wav"
+                                />
+                                Your browser does not support the audio element.
+                              </audio>
+                              <span class="audio-choice-badge" aria-label="正确答案">&#10003;</span>
+                            </div>
+                            <div class="audio-choice-item">
+                              <span class="audio-choice-label">B</span>
+                              <audio class="audio-player" controls preload="none">
+                                <source
+                                  src="static/media/track1/tone-variant/hit:10062_conv:20125_happy_badPara.wav"
+                                  type="audio/wav"
+                                />
+                                Your browser does not support the audio element.
+                              </audio>
+                              <span class="audio-choice-badge audio-choice-badge-placeholder" aria-hidden="true"></span>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="example-option-cell">
+                          <div class="example-cell-title">候选回复</div>
+                          <div class="audio-choice-list">
+                            <div class="audio-choice-item">
+                              <span class="audio-choice-label">A</span>
+                              <audio class="audio-player" controls preload="none">
+                                <source
+                                  src="static/media/track1/tone-variant/hit:10062_conv:20125_sad_goodPara.wav"
+                                  type="audio/wav"
+                                />
+                                Your browser does not support the audio element.
+                              </audio>
+                              <span class="audio-choice-badge" aria-label="正确答案">&#10003;</span>
+                            </div>
+                            <div class="audio-choice-item">
+                              <span class="audio-choice-label">B</span>
+                              <audio class="audio-player" controls preload="none">
+                                <source
+                                  src="static/media/track1/tone-variant/hit:10062_conv:20125_sad_badPara.wav"
+                                  type="audio/wav"
+                                />
+                                Your browser does not support the audio element.
+                              </audio>
+                              <span class="audio-choice-badge audio-choice-badge-placeholder" aria-hidden="true"></span>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block" id="evaluation-metrics">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="content-card">
+              <h2>评测指标</h2>
+              <ul class="metric-list">
+                <li><strong>Accuracy</strong>：每正确预测一个样本，准确率得分加 1。</li>
+                <li>
+                  <strong>Grouped bonus</strong>：若同一组 context-variant 或 tone-variant 样本均预测正确，则 bonus 得分加 1。
+                </li>
+                <li><strong>Final Score</strong>：<code>(Accuracy + Bonus) / (#data + #group)</code>。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block" id="leaderboard">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="content-card">
+              <h2>排行榜</h2>
+              <p>
+                排行榜将分别展示 context-variant 与 tone-variant 的结果，以及最终得分的加权平均值。
+              </p>
+              <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                  <thead>
+                    <tr>
+                      <th>模型</th>
+                      <th>Context-Variant</th>
+                      <th>Tone-Variant</th>
+                      <th>平均值</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="baseline-row">
+                      <td>Qwen-Omni<br />(基线模型)</td>
+                      <td>accuracy / bonus / Final Score</td>
+                      <td>accuracy / bonus / Final Score</td>
+                      <td>最终得分加权平均</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="table-note">公开成绩将在评测流程结束后公布。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <hr />
+        <p class="text-center">HumOmni：第一届以人为中心的全模态模型评测活动</p>
+      </footer>
+    </main>
+  </body>
+</html>

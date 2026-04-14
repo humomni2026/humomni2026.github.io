@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>赛道 2 - HumOmni</title>
+    <meta
+      name="description"
+      content="HumOmni 赛道 2 聚焦流式视频场景中的主动式多模态交互评测。"
+    />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/css/main.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script defer src="static/site.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top site-navbar">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#humomni-navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.zh.html">HumOmni</a>
+        </div>
+        <div class="collapse navbar-collapse" id="humomni-navbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="index.zh.html">征集</a></li>
+            <li><a href="track1.zh.html">赛道 1</a></li>
+            <li class="active"><a href="track2.zh.html">赛道 2</a></li>
+            <li><a href="register.zh.html">报名</a></li>
+            <li><a href="submission.zh.html">提交</a></li>
+            <li class="lang-switch-item">
+              <span class="lang-switch-wrap">
+                <a class="lang-link" href="track2.html">EN</a>
+                <span class="lang-divider">/</span>
+                <a class="lang-link is-active" href="track2.zh.html">中</a>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="site-topbar"></div>
+
+    <main class="container page-content">
+      <aside class="page-toc" id="track2-page-toc" aria-label="本页导航">
+        <button class="page-toc-toggle" type="button" aria-controls="track2-page-toc-panel" aria-expanded="true">
+          本页导航
+        </button>
+        <div class="page-toc-panel" id="track2-page-toc-panel">
+          <ul class="page-toc-list">
+            <li><a href="#overview">赛道简介</a></li>
+            <li><a href="#task-description">任务描述</a></li>
+            <li><a href="#evaluation-metrics">评测指标</a></li>
+            <li><a href="#leaderboard">排行榜</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <section class="page-header-block" id="overview">
+        <div class="row">
+          <div class="col-xs-12">
+            <h1>赛道 2 - ProactivEval</h1>
+            <p class="section-lead">视觉驱动主动交互评测</p>
+            <p>
+              本赛道旨在通过评测模型是否能够充当主动且有帮助的具身助手，来推进人工智能在视觉流中的主动感知能力。我们评估模型在多个贴近真实世界、以视觉为基础的场景中，理解上下文、预判需求，并以主动、及时且有帮助的方式支持人类的能力。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <hr />
+
+      <section class="section-block" id="task-description">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="content-card">
+              <h2>任务描述</h2>
+              <p>
+                给定一个实时播放的视频流以及在视频开头提供的问题，参赛者需要开发模型，使其能够在视频播放过程中主动决定何时回应以及回应什么，而不是在用户明确提问之后才作答。
+              </p>
+              <figure class="figure-card track2-figure-card illustration-figure">
+                <img
+                  src="static/img/track2/track2-illustration.png"
+                  alt="赛道 2 中离线交互、在线交互与主动交互的对比示意图。"
+                />
+              </figure>
+              <p>
+                参赛者将被邀请提交一个对话系统，其中包括多模态大模型以及相应的推理代码。系统输入将是视频开头给出的一个问题，以及视频的逐帧输入。系统应当能够在每一帧输入之后，仅基于截至当前已观察到的上下文，判断是否需要生成回复以及应当生成什么回复。<span class="text-danger"><strong>在时间 t 生成回复时，严格禁止使用时间 t 之后的帧。</strong></span>
+              </p>
+              <p>
+                每个测试样例的真实答案包含一条或多条回复。每条真实答案回复都由一个时间段以及对应文本组成。
+              </p>
+              <p>
+                示例视频：（视频中的问题和答案以字幕形式展示。以 "[0s] user:" 开头的字幕是问题，以 "[t1-t2] assistant:" 开头的字幕是真实答案。）
+              </p>
+              <div class="video-example-wrap">
+                <video class="video-player" controls preload="metadata">
+                  <source src="static/media/track2/WEB_example.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block" id="evaluation-metrics">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="content-card">
+              <h2>评测指标</h2>
+              <p><strong>模型将从时效性、正确性和冗余度三个方面进行评测。</strong></p>
+              <p>
+                模型将通过两个基于大模型的指标进行评估：<strong>PAUC</strong>（取值范围为 [0, 1]，越高越好）和 <strong>duplicate</strong>（取值范围为 [0, 1]，越低越好）。PAUC 要求模型在目标时间段内尽可能早地生成内容，并且该内容在语义上尽可能接近参考文本。该指标同时衡量模型的时效性和正确性。关于 PAUC 指标的详细说明，请参考
+                <a href="https://arxiv.org/abs/2507.09313" target="_blank" rel="noopener noreferrer">ProactiveVideoQA arXiv paper</a>。
+              </p>
+              <p>
+                duplicate 指标要求模型在同一时间段内不要生成与已有回复完全相同的内容。该指标用于衡量模型的冗余度。其定义如下：对于每一个时间段，从第二条回复开始，我们判断之后的每一条回复是否都被同一时间段内此前所有回复完全蕴含。这样的“真蕴含”情况数量与该时间段内第一条回复之后的总回复数之比，即为 duplicate 分数。数值越低表示表现越好。
+              </p>
+              <p>上述两个指标中的文本相似度将通过大模型计算（Gemini 3.1 Flash-Lite）。</p>
+              <p><strong>最终排名将基于两个指标的加权和：</strong></p>
+              <p><code>0.9 &times; PAUC + 0.1 &times; (1 &minus; duplicate)</code></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block" id="leaderboard">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="content-card">
+              <h2>排行榜</h2>
+              <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                  <thead>
+                    <tr>
+                      <th>TeamID</th>
+                      <th>PAUC/repetition</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="baseline-row">
+                      <td>MMDuet2<br />(基线模型)</td>
+                      <td>TODO</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <hr />
+        <p class="text-center">HumOmni：第一届以人为中心的全模态模型评测活动</p>
+      </footer>
+    </main>
+  </body>
+</html>

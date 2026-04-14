@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>HumOmni: The 1st Human-Centric Omni-Model Evaluation</title>
+    <meta
+      name="description"
+      content="HumOmni-2026 features two evaluation tracks focused on empathetic speech understanding and generation, and proactive multimodal assistance in streaming video scenarios."
+    />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/css/main.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script defer src="static/site.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top site-navbar">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#humomni-navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">HumOmni</a>
+        </div>
+        <div class="collapse navbar-collapse" id="humomni-navbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="index.html">Calls</a></li>
+            <li><a href="track1.html">Track 1</a></li>
+            <li><a href="track2.html">Track 2</a></li>
+            <li><a href="register.html">Registration</a></li>
+            <li><a href="submission.html">Submission</a></li>
+            <li class="lang-switch-item">
+              <span class="lang-switch-wrap">
+                <a class="lang-link is-active" href="index.html">EN</a>
+                <span class="lang-divider">/</span>
+                <a class="lang-link" href="index.zh.html">中</a>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="site-topbar"></div>
+
+    <main class="container page-content" id="top">
+      <aside class="page-toc" id="calls-page-toc" aria-label="On this page">
+        <button class="page-toc-toggle" type="button" aria-controls="calls-page-toc-panel" aria-expanded="true">
+          On this page
+        </button>
+        <div class="page-toc-panel" id="calls-page-toc-panel">
+          <ul class="page-toc-list">
+            <li><a href="#intro">Calls Overview</a></li>
+            <li><a href="#tracks">Evaluation Tracks</a></li>
+            <li><a href="#awards">Awards</a></li>
+            <li><a href="#important-dates">Important Dates</a></li>
+            <li><a href="#general-rules">General Rules</a></li>
+            <li><a href="#organizers">Organizers</a></li>
+            <li><a href="#advisors">Advisors</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <section class="hero-block">
+        <div class="row">
+          <div class="col-xs-12 text-center">
+            <h1><span class="hero-line hero-line-primary hero-line-nowrap hero-line-en-primary">HumOmni: The 1st Human-Centric Omni-Model Evaluation</span></h1>
+            <h2>
+              <span class="hero-line hero-line-secondary hero-line-nowrap hero-line-en-secondary">Benchmarking contextualized affective speech generation and proactive multimodal interaction</span>
+            </h2>
+          </div>
+        </div>
+      </section>
+
+      <hr />
+
+      <section class="section-block" id="intro">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2>Calls Overview</h2>
+            <p>
+              HumOmni-2026 features two evaluation tracks focused on benchmarking omni-models for empathetic speech
+              understanding and generation (EmpathyEval) and proactive assistance in streaming video scenarios
+              (ProactivEval), with an emphasis on human-centric evaluation and realistic multimodal interaction.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block" id="tracks">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2>Evaluation Tracks</h2>
+            <div class="panel panel-default track-panel">
+              <div class="panel-heading">
+                <h3 class="panel-title">Track 1: EmpathyEval</h3>
+              </div>
+              <div class="panel-body">
+                <p>
+                  Evaluates how multimodal systems understand human context and paralinguistic cues, and produce
+                  appropriate affective spoken responses.
+                </p>
+                <ul>
+                  <li>The benchmark includes Context-Variant and Tone-Variant settings.</li>
+                  <li>Inputs include textual context, one speech utterance, and candidate response audio.</li>
+                  <li>The evaluation metric is accuracy.</li>
+                </ul>
+                <p><a class="detail-link" href="track1.html">View Track 1 Details</a></p>
+              </div>
+            </div>
+
+            <div class="panel panel-default track-panel">
+              <div class="panel-heading">
+                <h3 class="panel-title">Track 2: ProactivEval</h3>
+              </div>
+              <div class="panel-body">
+                <p>
+                  Evaluation of proactive multimodal systems that decide when to respond and what to say during
+                  streaming video understanding.
+                </p>
+                <ul>
+                  <li>Inputs include videos and user instructions.</li>
+                  <li>The evaluation metrics are PAUC and Duplicate, focusing on timeliness, correctness, and response redundancy.</li>
+                </ul>
+                <p><a class="detail-link" href="track2.html">View Track 2 Details</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block" id="awards">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2>Awards</h2>
+            <ul>
+              <li>
+                Participants with the most successful and innovative entries will be invited to present at the
+                workshop and receive awards.
+              </li>
+              <li>For each track, the top team will receive a <strong>$1,000 USD</strong> cash prize.</li>
+              <li>The 2nd and 3rd teams will receive <strong>$800 USD</strong> and <strong>$600 USD</strong>.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block" id="important-dates">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2>Important Dates</h2>
+            <p>
+              The shared timeline is currently aligned across both tracks, with milestones shown as completed, ongoing,
+              or upcoming.
+            </p>
+            <div class="table-responsive">
+              <table class="table table-bordered table-hover dates-table">
+                <thead>
+                  <tr>
+                    <th>Time</th>
+                    <th>Agenda</th>
+                    <th>Note</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr data-start="2026-04-01" data-end="2026-06-30">
+                    <td>April to June, 2026</td>
+                    <td>Registration</td>
+                    <td>General workshop registration window</td>
+                  </tr>
+                  <tr data-start="2026-04-01" data-end="2026-04-30">
+                    <td>April 2026</td>
+                    <td>Phase 0</td>
+                    <td>Train and validation set release</td>
+                  </tr>
+                  <tr data-start="2026-05-15" data-end="2026-05-15">
+                    <td>May 15, 2026</td>
+                    <td>Phase 1</td>
+                    <td>Test set release</td>
+                  </tr>
+                  <tr data-start="2026-06-01" data-end="2026-06-30">
+                    <td>June 1 to June 30, 2026</td>
+                    <td>Leaderboard</td>
+                    <td>Public evaluation period</td>
+                  </tr>
+                  <tr data-start="2026-07-01" data-end="2026-07-10">
+                    <td>July 1 to July 10, 2026</td>
+                    <td>Phase 2</td>
+                    <td>Final model submission</td>
+                  </tr>
+                  <tr data-start="2026-07-10" data-end="2026-07-30">
+                    <td>July 10 to July 30, 2026</td>
+                    <td>Internal Testing</td>
+                    <td>Organizer-side evaluation</td>
+                  </tr>
+                  <tr data-start="2026-08-01" data-end="2026-08-01">
+                    <td>August 1, 2026</td>
+                    <td>Final Results</td>
+                    <td>Ranking release</td>
+                  </tr>
+                  <tr data-start="2026-08-01" data-end="2026-08-31">
+                    <td>August 2026</td>
+                    <td>Award Session</td>
+                    <td>On-site announcement</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block" id="general-rules">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2>General Rules</h2>
+            <ul>
+              <li>To ensure fairness, the Top-10 winners are required to submit a technical report for reproducibility verification.</li>
+              <li>Each entry must be associated with one team and its affiliation, and all members of one team must register together.</li>
+              <li>Using multiple accounts to increase the number of submissions is strictly prohibited.</li>
+              <li>Results must follow the required format and submission instructions, otherwise they will be considered invalid.</li>
+              <li>The best entry of each team will remain public on the leaderboard at all times.</li>
+              <li>The organizers reserve the absolute right to disqualify entries that are incomplete, illegible, late, or violating the rules.</li>
+              <li>In case of any inconsistency between the English and Chinese rules, the English content shall prevail.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block" id="organizers">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2>Organizers</h2>
+            <div class="people-grid people-grid-organizers">
+              <div class="person-card">
+                <img class="person-photo" src="static/img/people/organizers/Emmanuele%20Chersoni.jpeg" alt="Emmanuele Chersoni" />
+                <p class="person-name"><a href="https://research.polyu.edu.hk/en/persons/emmanuele-chersoni/" target="_blank" rel="noopener noreferrer">Emmanuele Chersoni</a></p>
+                <p class="person-affiliation">PolyU</p>
+              </div>
+              <div class="person-card">
+                <img class="person-photo" src="static/img/people/organizers/GengWang.jpg" alt="Geng Wang" />
+                <p class="person-name">Geng Wang</p>
+                <p class="person-affiliation">Huawei</p>
+              </div>
+              <div class="person-card">
+                <img class="person-photo" src="static/img/people/organizers/HongLanqing.jpg" alt="Hong Lanqing" />
+                <p class="person-name"><a href="https://racheltechie.github.io/" target="_blank" rel="noopener noreferrer">Hong Lanqing</a></p>
+                <p class="person-affiliation">Huawei</p>
+              </div>
+              <div class="person-card">
+                <img class="person-photo" src="static/img/people/organizers/LiJing.jpg" alt="Li Jing" />
+                <p class="person-name"><a href="https://www4.comp.polyu.edu.hk/~jing1li/" target="_blank" rel="noopener noreferrer">Li Jing</a></p>
+                <p class="person-affiliation">PolyU</p>
+              </div>
+              <div class="person-card">
+                <img class="person-photo" src="static/img/people/organizers/LiPiji.png" alt="Li Piji" />
+                <p class="person-name"><a href="https://lipiji.com/" target="_blank" rel="noopener noreferrer">Li Piji</a></p>
+                <p class="person-affiliation">NUAA</p>
+              </div>
+              <div class="person-card">
+                <img class="person-photo" src="static/img/people/organizers/LinChenghua.png" alt="Lin Chenghua" />
+                <p class="person-name"><a href="https://chenghua-lin.github.io/" target="_blank" rel="noopener noreferrer">Lin Chenghua</a></p>
+                <p class="person-affiliation">UOM</p>
+              </div>
+              <div class="person-card">
+                <img class="person-photo" src="static/img/people/organizers/LuoXuan.png" alt="Luo Xuan" />
+                <p class="person-name">Luo Xuan</p>
+                <p class="person-affiliation">PolyU</p>
+              </div>
+              <div class="person-card">
+                <img class="person-photo" src="static/img/people/organizers/QiXiaojuan.jpg" alt="Qi Xiaojuan" />
+                <p class="person-name"><a href="https://xjqi.github.io/" target="_blank" rel="noopener noreferrer">Qi Xiaojuan</a></p>
+                <p class="person-affiliation">HKU</p>
+              </div>
+              <div class="person-card">
+                <img class="person-photo" src="static/img/people/organizers/WangYueqian.jpg" alt="Wang Yueqian" />
+                <p class="person-name"><a href="https://yellow-binary-tree.github.io/" target="_blank" rel="noopener noreferrer">Wang Yueqian</a></p>
+                <p class="person-affiliation">PKU</p>
+              </div>
+              <div class="person-card">
+                <img class="person-photo" src="static/img/people/organizers/WeiZhongyu.jpg" alt="Wei Zhongyu" />
+                <p class="person-name"><a href="http://www.fudan-disc.com/people/zywei" target="_blank" rel="noopener noreferrer">Wei Zhongyu</a></p>
+                <p class="person-affiliation">FDU</p>
+              </div>
+              <div class="person-card">
+                <img class="person-photo" src="static/img/people/organizers/WuJibin.png" alt="Wu Jibin" />
+                <p class="person-name"><a href="https://www.jibinwu.com/" target="_blank" rel="noopener noreferrer">Wu Jibin</a></p>
+                <p class="person-affiliation">PolyU</p>
+              </div>
+              <div class="person-card">
+                <img class="person-photo" src="static/img/people/organizers/ZhangHuishuai.jpg" alt="Zhang Huishuai" />
+                <p class="person-name"><a href="https://huishuai-git.github.io/" target="_blank" rel="noopener noreferrer">Zhang Huishuai</a></p>
+                <p class="person-affiliation">PKU</p>
+              </div>
+              <div class="person-card">
+                <img class="person-photo" src="static/img/people/organizers/ZhaoLibo.png" alt="Zhao Libo" />
+                <p class="person-name">Zhao Libo</p>
+                <p class="person-affiliation">PolyU</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block" id="advisors">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2>Advisors</h2>
+            <div class="people-grid people-grid-advisors">
+              <div class="person-card">
+                <img class="person-photo" src="static/img/people/advisors/HeYulan.jpeg" alt="He Yulan" />
+                <p class="person-name"><a href="https://www.kcl.ac.uk/people/yulan-he" target="_blank" rel="noopener noreferrer">He Yulan</a></p>
+                <p class="person-affiliation">KCL</p>
+              </div>
+              <div class="person-card">
+                <img class="person-photo" src="static/img/people/advisors/LiuQun.jpg" alt="Liu Qun" />
+                <p class="person-name"><a href="https://liuquncn.github.io/index_en.html" target="_blank" rel="noopener noreferrer">Liu Qun</a></p>
+                <p class="person-affiliation">Huawei</p>
+              </div>
+              <div class="person-card">
+                <img class="person-photo" src="static/img/people/advisors/WongKam-Fai.jpg" alt="Wong Kam-Fai" />
+                <p class="person-name"><a href="https://kfwong.cintec.cuhk.edu.hk/" target="_blank" rel="noopener noreferrer">Wong Kam-Fai</a></p>
+                <p class="person-affiliation">CUHK</p>
+              </div>
+              <div class="person-card">
+                <img class="person-photo" src="static/img/people/advisors/XuRuifeng.png" alt="Xu Ruifeng" />
+                <p class="person-name"><a href="https://homepage.hit.edu.cn/xuruifeng" target="_blank" rel="noopener noreferrer">Xu Ruifeng</a></p>
+                <p class="person-affiliation">HITsz</p>
+              </div>
+              <div class="person-card">
+                <img class="person-photo" src="static/img/people/advisors/ZhaoDongyan.jpg" alt="Zhao Dongyan" />
+                <p class="person-name"><a href="https://www.wict.pku.edu.cn/zhaodongyan/en/" target="_blank" rel="noopener noreferrer">Zhao Dongyan</a></p>
+                <p class="person-affiliation">PKU</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block" id="contact">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2>Contact</h2>
+            <p>
+              For workshop-related inquiries, please contact
+              <a href="mailto:humomni2026@googlegroups.com">humomni2026@googlegroups.com</a>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <hr />
+        <p class="text-center">HumOmni: The 1st Workshop on Human-Centric Omni-Model Evaluation.</p>
+      </footer>
+    </main>
+  </body>
+</html>
