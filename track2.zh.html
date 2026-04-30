@@ -60,6 +60,7 @@
             <li><a href="#overview">赛道简介</a></li>
             <li><a href="#task-description">任务描述</a></li>
             <li><a href="#evaluation-metrics">评测指标</a></li>
+            <li><a href="#dataset">数据集</a></li>
             <li><a href="#leaderboard">排行榜</a></li>
           </ul>
         </div>
@@ -129,6 +130,20 @@
               <p>上述两个指标中的文本相似度将通过大模型计算（Gemini 3.1 Flash-Lite）。</p>
               <p><strong>最终排名将基于两个指标的加权和：</strong></p>
               <p><code>0.9 &times; PAUC + 0.1 &times; (1 &minus; duplicate)</code></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block" id="dataset">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="content-card">
+              <h2>数据集</h2>
+              <p><strong>不提供官方训练集, 参赛者可从下列主动式交互相关工作中获取训练数据：</strong></p>
+              <p><a href="https://github.com/showlab/videollm-online">https://github.com/showlab/videollm-online</a></p>
+              <p><a href="https://github.com/yellow-binary-tree/MMDuet">https://github.com/yellow-binary-tree/MMDuet</a></p>
+              <p><a href="https://github.com/yellow-binary-tree/MMDuet2">https://github.com/yellow-binary-tree/MMDuet2</a></p>
             </div>
           </div>
         </div>

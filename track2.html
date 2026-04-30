@@ -57,9 +57,10 @@
         </button>
         <div class="page-toc-panel" id="track2-page-toc-panel">
           <ul class="page-toc-list">
-            <li><a href="#overview">Track Intro</a></li>
+            <li><a href="#overview">Overview</a></li>
             <li><a href="#task-description">Task Description</a></li>
             <li><a href="#evaluation-metrics">Evaluation Metrics</a></li>
+            <li><a href="#dataset">Dataset</a></li>
             <li><a href="#leaderboard">Leaderboard</a></li>
           </ul>
         </div>
@@ -150,6 +151,20 @@
               <p>For both metrics above, text similarity will be computed using an LLM (Gemini 3.1 Flash-Lite).</p>
               <p><strong>The ranking will be based on a weighted sum of the two metrics:</strong></p>
               <p><code>0.9 &times; PAUC + 0.1 &times; (1 &minus; duplicate)</code></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block" id="dataset">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="content-card">
+              <h2>Dataset</h2>
+              <p><strong>We do not provide an official training set, but you can obtain training data from the following related works on proactive interaction:</strong></p>
+              <p><a href="https://github.com/showlab/videollm-online">https://github.com/showlab/videollm-online</a></p>
+              <p><a href="https://github.com/yellow-binary-tree/MMDuet">https://github.com/yellow-binary-tree/MMDuet</a></p>
+              <p><a href="https://github.com/yellow-binary-tree/MMDuet2">https://github.com/yellow-binary-tree/MMDuet2</a></p>
             </div>
           </div>
         </div>
