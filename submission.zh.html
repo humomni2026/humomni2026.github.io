@@ -87,8 +87,14 @@
             <div class="content-card">
               <h2>赛道 1 提交格式</h2>
               <p>赛道 1 当前采用如下 <code>jsonl</code> 格式。</p>
-              <pre class="submission-code"><code>{"question_id": 0, "answer": "A"}
-{"question_id": 1, "answer": "B"}</code></pre>
+              <pre class="submission-code"><code>{"question_id": "gigaspeech_0_1", "answer": "A"}
+{"question_id": "gigaspeech_0_2", "answer": "B"}</code></pre>
+              <p><strong>Note:</strong></p>
+              <ul>
+                <li>question_id 应与测试集中的相同。</li>
+                <li>只提交一个包含所有子集结果的文件。</li>
+                <li>禁止使用API进行直接预测。</li>
+              </ul>
             </div>
           </div>
         </div>
