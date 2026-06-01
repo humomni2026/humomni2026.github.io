@@ -339,7 +339,7 @@
             <div class="content-card">
               <h2>排行榜</h2>
               <p>
-                排行榜将分别展示 context-variant 与 tone-variant 的结果，以及最终得分的加权平均值。
+                排行榜将分别展示 context-variant 与 tone-variant 的结果, Accuracy / Bonus / Final Score, 以及最终得分的加权平均值。
               </p>
               <div class="table-responsive">
                 <table class="table table-bordered table-striped">
@@ -353,10 +353,16 @@
                   </thead>
                   <tbody>
                     <tr class="baseline-row">
-                      <td>Qwen-Omni<br />(基线模型)</td>
-                      <td>accuracy / bonus / Final Score</td>
-                      <td>accuracy / bonus / Final Score</td>
-                      <td>最终得分加权平均</td>
+                      <td>Qwen2.5-Omni-7B<br />(baseline)</td>
+                      <td> 189 / 32 / 0.381 </td>
+                      <td> 60 / 3 / 0.420 </td>
+                      <td> 249 / 35 / 0.389 </td>
+                    </tr>
+                    <tr class="baseline-row">
+                      <td>Qwen2.5-Omni-3B<br />(baseline)</td>
+                      <td> 182 / 31 / 0.367 </td>
+                      <td> 66 / 3 / 0.460 </td>
+                      <td> 248 / 34 / 0.386 </td>
                     </tr>
                   </tbody>
                 </table>

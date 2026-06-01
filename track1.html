@@ -349,8 +349,7 @@
             <div class="content-card">
               <h2>Leaderboard</h2>
               <p>
-                The leaderboard will report context-variant and tone-variant results separately, together
-                with the weighted average of the final scores.
+                The leaderboard will report context-variant and tone-variant results separately, Accuracy / Bonus / Final Score, together with the weighted average of the final scores.
               </p>
               <div class="table-responsive">
                 <table class="table table-bordered table-striped">
@@ -364,11 +363,23 @@
                   </thead>
                   <tbody>
                     <tr class="baseline-row">
-                      <td>Qwen-Omni<br />(baseline model)</td>
-                      <td>accuracy / bonus / Final Score</td>
-                      <td>accuracy / bonus / Final Score</td>
-                      <td>Weighted Average of final score</td>
+                      <td>Qwen2.5-Omni-7B<br />(baseline)</td>
+                      <td> 189 / 32 / 0.381 </td>
+                      <td> 60 / 3 / 0.420 </td>
+                      <td> 249 / 35 / 0.389 </td>
                     </tr>
+                    <tr class="baseline-row">
+                      <td>Qwen2.5-Omni-3B<br />(baseline)</td>
+                      <td> 182 / 31 / 0.367 </td>
+                      <td> 66 / 3 / 0.460 </td>
+                      <td> 248 / 34 / 0.386 </td>
+                    </tr>
+                    <!-- <tr class="baseline-row">
+                      <td>30B-A3B-instruct<br />(baseline)</td>
+                      <td> 287 / 32 / 0.381 </td>
+                      <td> 60 / 3 / 0.420 </td>
+                      <td> 249 / 35 / 0.389 </td>
+                    </tr> -->
                   </tbody>
                 </table>
               </div>
