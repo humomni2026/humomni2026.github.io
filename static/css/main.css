@@ -483,6 +483,43 @@ code {
   min-width: 240px;
 }
 
+.ceremony-action-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.ceremony-action-card {
+  padding: 20px;
+  background: linear-gradient(135deg, #f7fbff 0%, #ffffff 100%);
+  border: 1px solid #dbe5ee;
+  border-radius: 4px;
+}
+
+.ceremony-action-card h3 {
+  margin-bottom: 8px;
+  font-size: 22px;
+}
+
+.ceremony-action-card p {
+  margin-bottom: 16px;
+  color: #5e6976;
+  text-align: left;
+}
+
+.ceremony-action-card .registration-actions {
+  margin-bottom: 0;
+}
+
+.ceremony-action-card .btn {
+  min-width: 0;
+}
+
+.ceremony-meta-list {
+  margin-bottom: 0;
+  padding-left: 22px;
+}
+
 .metric-list {
   margin-bottom: 0;
 }
@@ -758,6 +795,14 @@ code {
 
   .track-example-table td {
     min-width: 240px;
+  }
+
+  .ceremony-action-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ceremony-action-card .btn {
+    width: 100%;
   }
 
   .audio-choice-item {
